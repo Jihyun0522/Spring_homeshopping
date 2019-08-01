@@ -12,7 +12,7 @@
 <body>
 <div class="row">
 	<div class="panel panel-default">
-	<div class="panel-heading">회원가입</div>
+	<div class="panel-heading">제품등록</div>
 	<div class="panel-body">
 		<form action="/product/register" method="post">
 			<div class="form-group">
@@ -36,6 +36,7 @@
 				<input type="number" name="amount" id="amount">
 			</div>
 			<button type="submit" class="btn btn-info">등록</button>
+			<a href="/product/list" class="btn btn-info">목록으로</a>
 		</form>
 	</div>
 	</div>

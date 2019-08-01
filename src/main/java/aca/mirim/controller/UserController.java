@@ -37,7 +37,7 @@ public class UserController {
 	public String remove(String id) {
 		System.out.println("remove get");
 		service.remove(id);
-		return "redirect:/";
+		return "redirect:/product/list";
 	}
 	
 	@GetMapping("/myPage")
@@ -59,6 +59,6 @@ public class UserController {
 			return "/login";
 		}
 		model.addAttribute("user", user);
-		return "redirect:/";
+		return "redirect:/product/list";
 	}
 }

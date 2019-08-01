@@ -14,15 +14,17 @@
 <body>
 <div class="row">
 	<div class="panel panel-default">
-	<div class="panel-heading">제품 목록 페이지</div><br>
-	<div class="form-group">
-		<a href="/product/register" class="btn btn-info">제품등록</a>
-		<a href="../user/adminPage" class="btn btn-info">관리자페이지</a>
-		<a href="../user/myPage" class="btn btn-info">마이페이지</a>
-		<a href="../user/register" class="btn btn-info">회원가입</a>
-		<a href="../user/login" class="btn btn-info">로그인</a>
-	</div>
+	<div class="panel-heading">제품 목록 페이지</div>
 	<div class="panel-body">
+		<div class="form-group">
+			<a href="/product/register" class="btn btn-info">제품등록</a>
+			<a href="../user/adminPage" class="btn btn-info">관리자페이지</a>
+			<a href="../user/myPage" class="btn btn-info">마이페이지</a>
+			<c:if test="${login.id == null}">
+				<a href="../user/register" class="btn btn-info">회원가입</a>
+				<a href="../user/login" class="btn btn-info">로그인</a>
+			</c:if>
+			</div>
 		<div class="form-group">
 			<form action="/product/list" method="post">
 				<select name="type">
