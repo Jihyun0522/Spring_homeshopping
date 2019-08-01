@@ -21,13 +21,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 		HttpSession session = request.getSession();
-		Object userVO = modelAndView.getModelMap().get("userVO");
+		Object userVO = modelAndView.getModelMap().get("user");
 		
 		if(userVO != null) {
 			System.out.println("new login success...");
 			session.setAttribute("login", userVO);
 			Object dest = session.getAttribute("dest");
-			response.sendRedirect(dest != null ? (String)dest : "/");
+			response.sendRedirect(dest != null ? (String)dest : "/product/list");
 		}
 	}
 	

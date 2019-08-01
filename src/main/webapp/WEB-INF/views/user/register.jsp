@@ -28,6 +28,7 @@
 				<input type="text" name="password" id="password">
 			</div>
 			<button type="submit" class="btn btn-info">회원가입</button>
+			<a href="/product/list" class="btn btn-info">돌아가기</a>
 		</form>
 	</div>
 	</div>

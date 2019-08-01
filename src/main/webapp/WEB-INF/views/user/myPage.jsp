@@ -16,17 +16,16 @@
 	<div class="panel-body">
 			<div class="form-group">
 				<label for="name">이름</label>
-				<input type="text" name="name" id="name" value="${login.name}">
+				<input type="text" name="name" id="name" class="form-control" value="${login.name}" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="id">아이디</label>
-				<input type="text" name="id" id="id" value="${login.id}">
+				<input type="text" name="id" id="id" class="form-control" value="${login.id}" readonly="readonly">
 			</div>
 			<div class="form-group">
 				<label for="password">비밀번호</label>
-				<input type="text" name="password" id="password" value="${login.password}">
+				<input type="text" name="password" id="password" class="form-control" value="${login.password}" readonly="readonly">
 			</div>
-			<button type="submit" class="btn btn-info">회원정보 수정</button>
 			<a href="/product/list" class="btn btn-info">목록으로</a>
 			<a href="/user/remove?id=${login.id}" class="btn btn-danger">회원탈퇴</a>
 	</div>

@@ -19,19 +19,19 @@
 		</div>
 		<div class="form-group">
 			<label for="proname">제품명</label>
-			<input name='title' id="proname" value="${product.proname}" readonly="readonly">
+			<input name='title' id="proname" value="${product.proname}" readonly="readonly" class="form-control">
 		</div>
 		<div class="form-group">
 			<label>내용</label>
-			<textarea name='content' readonly="readonly">${product.content}</textarea>
+			<textarea name='content' readonly="readonly" class="form-control">${product.content}</textarea>
 		</div>
 		<div class="form-group">
 			<label>가격</label>
-			<input name='price' value="${product.price}" readonly="readonly">
+			<input name='price' value="${product.price}" readonly="readonly" class="form-control">
 		</div>
 		<div class="form-group">
 			<label>수량</label>
-			<input name='amount' value="${product.amount}" readonly="readonly">
+			<input name='amount' value="${product.amount}" readonly="readonly" class="form-control">
 		</div>
 		<a href="/product/modify?proname=${product.proname}" class="btn btn-info">수정</a>
 		<a href="/product/remove?proname=${product.proname}" class="btn btn-info">삭제</a>

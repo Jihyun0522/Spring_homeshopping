@@ -14,13 +14,13 @@
 	<div class="panel panel-default">
 	<div class="panel-heading">로그인</div>
 	<div class="panel-body">
-		<form action="/user/login" method="post">
+		<form action="/user/loginPost" method="post">
 			<div class="form-group">
 				<label for="loginId">아이디</label>
 				<input type="text" name="loginId" id="loginId">
 			</div>
 			<div class="form-group">
-				<label for=loginPw>비밀번호</label>
+				<label for="loginPw">비밀번호</label>
 				<input type="text" name="loginPw" id="loginPw">
 			</div>
 			<div class="form-group">
@@ -29,6 +29,7 @@
 				</label>
 			</div>
 			<button type="submit" class="btn btn-info">로그인</button>
+			<a href="/product/list" class="btn btn-info">돌아가기</a>
 		</form>
 	</div>
 	</div>

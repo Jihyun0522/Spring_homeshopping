@@ -1,5 +1,7 @@
 package aca.mirim.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,9 +36,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/remove")
-	public String remove(String id) {
+	public String remove(String id, HttpSession session) {
 		System.out.println("remove get");
 		service.remove(id);
+		session.removeAttribute("login");
 		return "redirect:/product/list";
 	}
 	
@@ -50,7 +53,7 @@ public class UserController {
 		System.out.println("login get");
 	}
 	
-	@PostMapping("/login")
+	@PostMapping("/loginPost")
 	public String loginPost(LoginDTO dto, HttpSession session, Model model) {
 		System.out.println("login Post" + dto);
 		UserVO user = service.login(dto);
@@ -59,6 +62,13 @@ public class UserController {
 			return "/login";
 		}
 		model.addAttribute("user", user);
-		return "redirect:/product/list";
+		return "/product/list";
+	}
+	
+	@GetMapping("/adminPage")
+	public void adminPage(Model model) {
+		System.out.println("adminPage get");
+		List<UserVO> list = service.getList();
+		model.addAttribute("list", list);
 	}
 }
