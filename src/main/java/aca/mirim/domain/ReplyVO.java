@@ -3,43 +3,60 @@ package aca.mirim.domain;
 import java.util.Date;
 
 public class ReplyVO {
-
-	private int num;
-	private String content;
-	private String writer;
-	private Date date;
 	
-	public int getNum() {
-		return num;
-	}
-	public void setNum(int num) {
-		this.num = num;
-	}
+	private int rno;
+	private int bno;
+	private String reply;
+	private String replyer;
+	private Date replydate;
+	private Date updatedate;
 	
-	public String getContent() {
-		return content;
+	public int getRno() {
+		return rno;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setRno(int rno) {
+		this.rno = rno;
 	}
 	
-	public String getWriter() {
-		return writer;
+	public int getBno() {
+		return bno;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setBno(int bno) {
+		this.bno = bno;
 	}
 	
-	public Date getDate() {
-		return date;
+	public String getReply() {
+		return reply;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setReply(String reply) {
+		this.reply = reply;
+	}
+	
+	public String getReplyer() {
+		return replyer;
+	}
+	public void setReplyer(String replyer) {
+		this.replyer = replyer;
+	}
+	
+	public Date getReplydate() {
+		return replydate;
+	}
+	public void setReplydate(Date replydate) {
+		this.replydate = replydate;
+	}
+	
+	public Date getUpdatedate() {
+		return updatedate;
+	}
+	public void setUpdatedate(Date updatedate) {
+		this.updatedate = updatedate;
 	}
 	
 	@Override
 	public String toString() {
-		return "ReplyVO [num=" + num + ", content=" + content + ", writer=" + writer + ", date=" + date + "]";
+		return "ReplyVO [rno=" + rno + ", bno=" + bno + ", reply=" + reply + ", replyer=" + replyer + ", replydate="
+				+ replydate + ", updatedate=" + updatedate + "]";
 	}
 	
 }
