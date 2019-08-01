@@ -13,6 +13,9 @@ public interface UserMapper {
 	@Select("select * from user_tbl")
 	public List<UserVO> getList();
 	
+	@Select("select * from user_tbl where id = #{id}")
+	public UserVO read(String id);
+	
 	@Insert("insert into user_tbl(id,password,name) values(#{id}, #{password}, #{name}")
 	public void insert(UserVO user);  
 	

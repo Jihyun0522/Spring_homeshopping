@@ -38,4 +38,10 @@ public class UserServiceImpl implements UserService{
 		return mapper.login(dto);
 	}
 
+	@Override
+	public UserVO read(String id) {
+		// TODO Auto-generated method stub
+		return mapper.read(id);
+	}
+
 }
