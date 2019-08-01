@@ -14,19 +14,23 @@
 <body>
 <div class="row">
 	<div class="panel panel-default">
-	<div class="panel-heading">제품 목록 페이지
-		<a href="/product/register" class="btn btn-info">Register(등록)</a>
+	<div class="panel-heading">제품 목록 페이지</div><br>
+	<div class="form-group">
+		<a href="/product/register" class="btn btn-info">제품등록</a>
+		<a href="../user/adminPage" class="btn btn-info">관리자페이지</a>
+		<a href="../user/myPage" class="btn btn-info">마이페이지</a>
+		<a href="../user/register" class="btn btn-info">회원가입</a>
+		<a href="../user/login" class="btn btn-info">로그인</a>
 	</div>
 	<div class="panel-body">
 		<div class="form-group">
 			<form action="/product/list" method="post">
 				<select name="type">
-					<option value="">----</option>
 					<option value="proname">제품명</option>
 					<option value="content">내 용</option>
 				</select>
 				<input type="text" name="keyword">
-				<button class="btn btn-primary">검 색</button>
+				<button class="btn btn-info">검 색</button>
 			</form>
 		</div>
 		<table class="table table-striped table-bordered table-hover">
@@ -40,14 +44,21 @@
 			</thead>
 			<c:forEach items="${list}" var="product">
 			<tr>
-				<td>
-					<a href="/product/get?bno=<c:out value='${product.proname}'/>">
+				<td width="40%">
+					<a href="/product/get?proname=<c:out value='${product.proname}'/>">
 						<c:out value="${product.proname}"></c:out>
 					</a>
 				</td>
 				<td><c:out value="${product.price}"></c:out></td>
 				<td><c:out value="${product.amount}"></c:out></td>
-				<td><a href="/product/buy" class="btn btn-info">구매하기</a></td>
+				<td>
+					<c:if test="${product.amount > 0}">
+						<a href="/product/buy?proname=${product.proname}" class="btn btn-info">구매하기</a>
+					</c:if>
+					<c:if test="${product.amount <= 0}">
+						수량없음
+					</c:if>
+				</td>
 			</tr>
 			</c:forEach>
 		</table>

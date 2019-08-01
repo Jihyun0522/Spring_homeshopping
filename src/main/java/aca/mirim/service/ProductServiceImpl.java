@@ -45,4 +45,10 @@ public class ProductServiceImpl implements ProductService{
 		return mapper.getSearch(cri);
 	}
 
+	@Override
+	public void buy(String proname) {
+		// TODO Auto-generated method stub
+		mapper.buy(proname);
+	}
+
 }

@@ -13,5 +13,6 @@ public interface ProductService {
 	public void remove(String proname);
 	public void update(String proname);
 	public List<ProductVO> getSearch(Criteria cri);
+	public void buy(String proname);
 	
 }

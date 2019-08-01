@@ -27,6 +27,9 @@ public interface ProductMapper {
 	@Update ("update product_tbl set amount=#{amount}, price=#{price}, imgsrc=#{imgsrc}, content=#{content} where proname=#{proname}")
 	public void update(String proname);
 	
+	@Update ("update product_tbl set amount = amount-1 where proname=#{proname}")
+	public void buy(String proname);
+	
 	@Select ("select * from product_tbl where ${type} like '%'||#{keyword}||'%'")
 	public List<ProductVO> getSearch(Criteria cri);
 	
