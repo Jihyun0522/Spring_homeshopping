@@ -21,6 +21,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 		
 		if(request.getMethod().equals("GET")) {
 			System.out.println("dest : " + (uri + query));
+			request.getSession().setAttribute("dest", uri + query);
 		}
 	}
 
