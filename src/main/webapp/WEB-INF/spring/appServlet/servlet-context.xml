@@ -23,6 +23,19 @@
 	
 	<context:component-scan base-package="aca.mirim.controller" />
 	
+	<beans:bean id="loginInterceptor" class="aca.mirim.interceptor.LoginInterceptor"></beans:bean>
+	<beans:bean id="authInterceptor" class="aca.mirim.interceptor.AuthInterceptor"></beans:bean>
 	
-	
+	<interceptors>
+		<interceptor>
+			<mapping path="/login"/>
+			<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/board/register"/>
+			<mapping path="/board/modify"/>
+			<mapping path="/board/remove"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor>
+	</interceptors>
 </beans:beans>
