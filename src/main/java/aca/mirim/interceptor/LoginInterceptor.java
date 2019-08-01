@@ -13,7 +13,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("login") != null)
-			System.out.println("clear(ì§€ì›€) login data before");
+			System.out.println("clear(Áö¿ò) login data before");
 			session.removeAttribute("login");
 		return true;
 	}

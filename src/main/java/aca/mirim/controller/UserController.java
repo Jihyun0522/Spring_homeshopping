@@ -1,15 +1,17 @@
 package aca.mirim.controller;
 
-import java.util.List;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import aca.mirim.domain.LoginDTO;
 import aca.mirim.domain.UserVO;
 import aca.mirim.service.UserService;
 
@@ -39,9 +41,24 @@ public class UserController {
 	}
 	
 	@GetMapping("/myPage")
-	public void myPage(@RequestParam("id") String id, Model model) {
+	public void myPage(Model model) {
 		System.out.println("myPage get");
-		UserVO user = service.read(id);
+	}
+	
+	@GetMapping("/login")
+	public void login(@ModelAttribute("dto") LoginDTO dto) {
+		System.out.println("login get");
+	}
+	
+	@PostMapping("/login")
+	public String loginPost(LoginDTO dto, HttpSession session, Model model) {
+		System.out.println("login Post" + dto);
+		UserVO user = service.login(dto);
+		if(user==null) {
+			model.addAttribute("msg", "아이디 또는 비밀번호가 맞지 않습니다.");
+			return "/login";
+		}
 		model.addAttribute("user", user);
+		return "redirect:/";
 	}
 }

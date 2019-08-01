@@ -29,7 +29,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		HttpSession session = request.getSession();
 		if(session.getAttribute("login") == null) {
-			System.out.println("idë‚˜ pwê°€ í‹€ë¦¼. ë¡œê·¸ì¸ë˜ì§€ ì•ŠìŒ....");
+			System.out.println("id ¶Ç´Â ºñ¹Ğ¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù....");
 			saveDest(request);
 			response.sendRedirect("/login");
 			return false;

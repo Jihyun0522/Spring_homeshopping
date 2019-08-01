@@ -5,9 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="row">
@@ -16,16 +13,24 @@
 	<div class="panel-body">
 		<form action="/user/register" method="post">
 			<div class="form-group">
-				<label for="name">이름</label>
-				<input type="text" name="name" id="name">
+				<label for="imgsrc">제품이미지링크</label>
+				<input type="text" name="imgsrc" id="imgsrc">
 			</div>
 			<div class="form-group">
-				<label for="id">아이디</label>
-				<input type="text" name="id" id="id">
+				<label for="proname">제품명</label>
+				<input type="text" name="proname" id="proname">
 			</div>
 			<div class="form-group">
-				<label for="password">비밀번호</label>
-				<input type="text" name="password" id="password">
+				<label for="content">내용</label>
+				<input type="text" name="content" id="content">
+			</div>
+			<div class="form-group">
+				<label for="price">가격</label>
+				<input type="text" name="price" id="price">
+			</div>
+			<div class="form-group">
+				<label for="amount">수량</label>
+				<input type="text" name="amount" id="amount">
 			</div>
 			<button type="submit" class="btn btn-info">회원가입</button>
 		</form>
