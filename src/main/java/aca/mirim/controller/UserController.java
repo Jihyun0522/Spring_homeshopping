@@ -40,6 +40,7 @@ public class UserController {
 		System.out.println("remove get");
 		service.remove(id);
 		session.removeAttribute("login");
+		session.invalidate();
 		return "redirect:/product/list";
 	}
 	
@@ -58,7 +59,7 @@ public class UserController {
 		System.out.println("login Post" + dto);
 		UserVO user = service.login(dto);
 		if(user==null) {
-			model.addAttribute("msg", "¾ÆÀÌµð ¶Ç´Â ºñ¹Ð¹øÈ£°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+			model.addAttribute("msg", "ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.");
 			return "/login";
 		}
 		model.addAttribute("user", user);
